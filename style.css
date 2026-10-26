@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #0d0d11;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 1.5rem 3rem 1.5rem;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.2rem;
+    width: 100%;
+    min-height: 380px;
+    padding: 6rem 1.5rem 5rem 1.5rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(13, 13, 17, 0.45) 0%, rgba(13, 13, 17, 0.82) 70%, #0d0d11 100%),
+        url('./.public/movie-poster.png') center top / cover no-repeat;
+}
+
+#app-name h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #FFE259 0%, #FFA751 50%, #FF6A00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    height: 54px;
+    padding: 0 1rem;
+    background-color: #16161c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: text;
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a8b5db;
+    cursor: pointer;
+}
+
+#input-bar {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #fff;
+    padding-left: 0.85rem;
+    font-family: inherit;
+}
+
+#input-bar::placeholder {
+    color: #5d6785;
+}
+
+.trending-section,
+.movie-section {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.trending-section h1,.movie-section h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.trending-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 1.5rem;
+    scrollbar-width: none;
+}
+
+.trending-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.trending-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 230px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.trending-card:hover {
+    transform: translateY(-5px);
+}
+
+.rank-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 160px;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 4px rgba(206, 206, 251, 0.5);
+    margin-right: -25px;
+    user-select: none;
+    z-index: 1;
+}
+
+.trending-card img {
+    width: 140px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.movie-card {
+    background-color: #16161c;
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 167, 81, 0.4);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.movie-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.movie-meta .rating {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+.movie-meta .dot {
+    color: #4b5563;
+}
